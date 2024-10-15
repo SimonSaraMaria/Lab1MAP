@@ -25,4 +25,28 @@ public class ZahlenArray {
         }
         return min;
     }
+
+    public int findeMaximaleSumme() {
+        int max = findeMax();
+        int summe = 0;
+        for (int zahl : zahlen) {
+            if (zahl != max) {
+                summe += zahl;
+            }
+        }
+        return summe;
+    }
+
+    public int findeMinimaleSumme() {
+        int min = findeMin();
+        int summe = 0;
+        for (int zahl : zahlen) {
+            if (zahl != min) {
+                summe += zahl;
+            }
+        }
+        return summe;
+    }
+
+
 }
