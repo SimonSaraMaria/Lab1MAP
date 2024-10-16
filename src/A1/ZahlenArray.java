@@ -27,10 +27,10 @@ public class ZahlenArray {
     }
 
     public int findeMaximaleSumme() {
-        int max = findeMax();
+        int min = findeMin();
         int summe = 0;
         for (int zahl : zahlen) {
-            if (zahl != max) {
+            if (zahl != min) {
                 summe += zahl;
             }
         }
@@ -38,10 +38,10 @@ public class ZahlenArray {
     }
 
     public int findeMinimaleSumme() {
-        int min = findeMin();
+        int max = findeMax();
         int summe = 0;
         for (int zahl : zahlen) {
-            if (zahl != min) {
+            if (zahl != max) {
                 summe += zahl;
             }
         }

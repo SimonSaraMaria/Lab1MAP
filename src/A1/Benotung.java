@@ -2,15 +2,15 @@ package A1;
 
 public class Benotung {
     public int[] nichtAusreichendeNoten (int[] noten) {
-        int[] nichtAusreichend = new int[noten.length]; //de aceeasi lungime cu array-ul de input
+        int[] nichtAusreichend = new int[noten.length];
         int index = 0;
-        for (int note : noten) { //itereaza prin fiecare nota din array
+        for (int note : noten) {
             if (note < 40) {
                 nichtAusreichend[index++] = note;
             }
         }
-        int[] result = new int[index];
-        System.arraycopy(nichtAusreichend, 0, result, 0, index); //copiaza din nichtA in result n elemente
+        int[] result = new int[index]; //de aceeasi lungime cu nichtA
+        System.arraycopy(nichtAusreichend, 0, result, 0, index);
         return result;
     }
 
