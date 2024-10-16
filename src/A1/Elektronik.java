@@ -39,25 +39,33 @@ public class Elektronik {
     }
 
     //public int maximalerGeldbetrag(int budget, int[] tastaturen, int[] usbLaufwerk) {
-        //int billigsteTastatur = billigsteTastatur(tastaturen);
-        //int teuerstesUsbLaufwerk = teuerstesUsbLaufwerk(usbLaufwerk, budget);
-        //if (billigsteTastatur + teuerstesUsbLaufwerk > budget <= budget) {}
+    //int billigsteTastatur = billigsteTastatur(tastaturen);
+    //int teuerstesUsbLaufwerk = teuerstesUsbLaufwerk(usbLaufwerk, budget);
+    //if (billigsteTastatur + teuerstesUsbLaufwerk > budget <= budget) {}
     //}
 
     public int maximalerGeldbetrag(int budget, int[] tastaturen, int[] usbLaufwerke) {
         int maxAusgaben = 0;
         for (int tastaturPreis : tastaturen) {
             if (tastaturPreis <= budget) {
-                maxAusgaben = Math.max(maxAusgaben, tastaturPreis);
-            }
-        }
-        for (int usbLaufwerkPreis : usbLaufwerke) {
-            //if (usbLaufwerkPreis <= budget - maxAusgaben) {
-              //  maxAusgaben += usbLaufwerkPreis;
-            if (tastaturPreis + usbLaufwerkPreis <= budget) {
-                maxAusgaben = Math.max(maxAusgaben, tastaturPreis + usbLaufwerkPreis);
+                for (int usbLaufwerkPreis : usbLaufwerke) {
+                    if (tastaturPreis + usbLaufwerkPreis <= budget) {
+                        maxAusgaben = Math.max(maxAusgaben, tastaturPreis + usbLaufwerkPreis);
+                    }
+                }
             }
         }
         return maxAusgaben;
     }
 }
+
+//        for (int usbLaufwerkPreis : usbLaufwerke) {
+//            if (usbLaufwerkPreis <= budget - maxAusgaben) {
+//                maxAusgaben += usbLaufwerkPreis;
+//            if (tastaturPreis + usbLaufwerkPreis <= budget) {
+//                maxAusgaben = tastaturPreis + usbLaufwerkPreis;
+//            }
+//        }
+//        return maxAusgaben;
+
+
